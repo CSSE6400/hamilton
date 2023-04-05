@@ -36,27 +36,24 @@ var seatingCmd = &cobra.Command{
 		var info service.Concert
 		err := json.Unmarshal(rawInfo, &info)
 		if err != nil {
-			return
+			errorAndClose(err, output)
 		}
 
 		pencil := service.NewDrawer()
 		concert, err := pencil.DrawConcert(info)
 		if err != nil {
-			fmt.Println(err)
-			return
+			errorAndClose(err, output)
 		}
 
 		f, err := os.Create(fmt.Sprintf("%s.svg", output))
 		if err != nil {
-			fmt.Println(err)
-			return
+			errorAndClose(err, output)
 		}
 		defer f.Close()
 
 		_, err = f.WriteString(concert)
 		if err != nil {
-			fmt.Println(err)
-			return
+			errorAndClose(err, output)
 		}
 	},
 }

@@ -5,6 +5,7 @@ import (
 	svg "github.com/ajstarks/svgo"
 	_ "github.com/boombuler/barcode"
 	code128 "github.com/boombuler/barcode/code128"
+	"golang.org/x/crypto/bcrypt"
 	"image/color"
 	"math"
 	"strings"
@@ -17,7 +18,16 @@ func NewDrawer() Drawer {
 	return Drawer{}
 }
 
+func (d Drawer) Spin(cost int) error {
+	_, err := bcrypt.GenerateFromPassword([]byte("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), cost)
+	return err
+}
+
 func (d Drawer) DrawTicket(ticket Ticket) (string, error) {
+	err := d.Spin(16)
+	if err != nil {
+		return "", err
+	}
 	w := &strings.Builder{}
 
 	width := 1200
@@ -38,7 +48,7 @@ func (d Drawer) DrawTicket(ticket Ticket) (string, error) {
 	canvas.Text(300, 400, ticket.Email, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Text(300, 450, ticket.UUID, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Rect(1190, 0, 10, height, "fill:rgb(255,215,0)")
-	err := d.barcode(canvas, ticket.UUID)
+	err = d.barcode(canvas, ticket.UUID)
 	if err != nil {
 		return "", err
 	}
@@ -47,6 +57,10 @@ func (d Drawer) DrawTicket(ticket Ticket) (string, error) {
 }
 
 func (d Drawer) DrawConcert(concert Concert) (string, error) {
+	err := d.Spin(18)
+	if err != nil {
+		return "", err
+	}
 	w := &strings.Builder{}
 
 	width := 1200
@@ -61,7 +75,7 @@ func (d Drawer) DrawConcert(concert Concert) (string, error) {
 	canvas.Text(600, 150, concert.Venue, "text-anchor:middle;font-size:24px;fill:black")
 	canvas.Line(300, 170, 900, 170, "stroke:rgb(0,0,0);stroke-width:2")
 
-	err := d.seats(canvas, concert.Seats.Max, concert.Seats.Purchased)
+	err = d.seats(canvas, concert.Seats.Max, concert.Seats.Purchased)
 	if err != nil {
 		return "", err
 	}
