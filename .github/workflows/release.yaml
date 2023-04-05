@@ -25,3 +25,4 @@ jobs:
           goversion: "1.19"
           binary_name: "hamilton"
           extra_files: LICENSE README.md
+          compress_assets: "OFF"

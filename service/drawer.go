@@ -29,7 +29,7 @@ func (d Drawer) DrawTicket(ticket Ticket) (string, error) {
 	canvas.Rect(0, 0, 200, height, "fill:rgb(40,40,40)")
 	canvas.Rect(200, 0, 20, height, "fill:rgb(255,0,0)")
 	canvas.Circle(210, 100, 50, "fill:rgb(255,0,0)")
-	canvas.Text(300, 100, ticket.Concert.Name, "text-anchor:left;font-size:48px;fill:black")
+	canvas.Text(300, 100, ticket.Concert.Name, "text-anchor:left;font-size:36px;fill:black")
 	canvas.Text(300, 150, ticket.Concert.Date, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Text(300, 200, ticket.Concert.Venue, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Text(300, 250, ticket.Concert.UUID, "text-anchor:left;font-size:24px;fill:black")
