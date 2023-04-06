@@ -23,7 +23,7 @@ var seatingCmd = &cobra.Command{
 		"venue": "Example Venue",
 		"seats": {
 			"max": 100,
-			"purchased": 56,	
+			"purchased": 56
 		}
 	}
 `,

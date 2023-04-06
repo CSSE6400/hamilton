@@ -18,11 +18,11 @@ var ticketCmd = &cobra.Command{
 		"uuid": "12345678-1234-1234-1234-123456789012",
 		"name": "Example User",
 		"email": "example@uq.edu.au",
-		"concert: {
+		"concert": {
 			"uuid": "12345678-1234-1234-1234-123456789012",
 			"name": "Example Concert",
 			"date": "2021-01-01",
-			"venue": "Example Venue",
+			"venue": "Example Venue"
 		}
 	}
 `,
