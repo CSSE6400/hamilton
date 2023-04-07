@@ -29,11 +29,11 @@ Tickets are generated from a JSON file like so:
 
 ```json
 {
-  "uuid": "12345678-1234-1234-1234-123456789012",
+  "id": "12345678-1234-1234-1234-123456789012",
   "name": "Evan Hughes",
   "email": "example@uq.edu.au",
   "concert": {
-    "uuid": "12345678-1234-1234-1234-123456789012",
+    "id": "12345678-1234-1234-1234-123456789012",
     "name": "Phantom of the Opera",
     "date": "2023-06-07",
     "venue": "Sydney Opera House"
@@ -57,7 +57,7 @@ Seating plans are generated from a JSON file like so:
 
 ```json
 {
-  "uuid": "12345678-1234-1234-1234-123456789012",
+  "id": "12345678-1234-1234-1234-123456789012",
   "name": "Phantom of the Opera",
   "date": "2023-06-07",
   "venue": "Sydney Opera House",
@@ -101,3 +101,13 @@ psrecord "hamilton ....." --log activity.txt --plot performance.png
 ## Contributing
 
 Contributions are welcome but the project is for the usage in an assessment so some aspects of the program are intentional to create load on the system.
+
+## Changes
+
+### 1.1.0
+
+- Renamed the uuid fields to id to match the API
+
+### 1.0.0
+
+- Initial release

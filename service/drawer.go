@@ -34,7 +34,7 @@ func (d Drawer) DrawTicket(ticket Ticket) (string, error) {
 	height := 518
 	canvas := svg.New(w)
 	canvas.Start(width, height)
-	canvas.Desc(ticket.UUID)
+	canvas.Desc(ticket.ID)
 	canvas.Rect(0, 0, width, height, "fill:rgb(255,255,255)")
 	canvas.Rect(0, 0, 200, height, "fill:rgb(92,158,173)")
 	canvas.Rect(200, 0, 20, height, "fill:rgb(50,98,115)")
@@ -42,13 +42,13 @@ func (d Drawer) DrawTicket(ticket Ticket) (string, error) {
 	canvas.Text(300, 100, ticket.Concert.Name, "text-anchor:left;font-size:36px;fill:black")
 	canvas.Text(300, 150, ticket.Concert.Date, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Text(300, 200, ticket.Concert.Venue, "text-anchor:left;font-size:24px;fill:black")
-	canvas.Text(300, 250, ticket.Concert.UUID, "text-anchor:left;font-size:24px;fill:black")
+	canvas.Text(300, 250, ticket.Concert.ID, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Line(300, 300, 900, 300, "stroke:rgb(0,0,0);stroke-width:2")
 	canvas.Text(300, 350, ticket.Name, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Text(300, 400, ticket.Email, "text-anchor:left;font-size:24px;fill:black")
-	canvas.Text(300, 450, ticket.UUID, "text-anchor:left;font-size:24px;fill:black")
+	canvas.Text(300, 450, ticket.ID, "text-anchor:left;font-size:24px;fill:black")
 	canvas.Rect(1190, 0, 10, height, "fill:rgb(255,215,0)")
-	err = d.barcode(canvas, ticket.UUID)
+	err = d.barcode(canvas, ticket.ID)
 	if err != nil {
 		return "", err
 	}
@@ -75,7 +75,7 @@ func (d Drawer) DrawConcert(concert Concert) (string, error) {
 	canvas := svg.New(w)
 	canvas.Start(width, height)
 
-	canvas.Desc(fmt.Sprintf("%s|%d|%d", concert.UUID, concert.Seats.Max, concert.Seats.Purchased))
+	canvas.Desc(fmt.Sprintf("%s|%d|%d", concert.ID, concert.Seats.Max, concert.Seats.Purchased))
 	canvas.Rect(0, 0, width, height, "fill:rgb(255,255,255)")
 	canvas.Text(600, 100, concert.Name, "text-anchor:middle;font-size:36px;fill:black")
 	canvas.Text(600, 150, concert.Venue, "text-anchor:middle;font-size:24px;fill:black")

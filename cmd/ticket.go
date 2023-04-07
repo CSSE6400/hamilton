@@ -15,11 +15,11 @@ var ticketCmd = &cobra.Command{
 	Long: `Generate a ticket SVG with the given input file as describe by:
 
 	{
-		"uuid": "12345678-1234-1234-1234-123456789012",
+		"id": "12345678-1234-1234-1234-123456789012",
 		"name": "Example User",
 		"email": "example@uq.edu.au",
 		"concert": {
-			"uuid": "12345678-1234-1234-1234-123456789012",
+			"id": "12345678-1234-1234-1234-123456789012",
 			"name": "Example Concert",
 			"date": "2021-01-01",
 			"venue": "Example Venue"
