@@ -14,6 +14,14 @@ This package must be installed by collecting the static binary given in the rele
 hamilton --help
 ```
 
+```bash
+hamilton generate ticket --help
+```
+
+```bash
+hamilton generate seating --help
+```
+
 
 #### Generate a ticket
 
@@ -26,7 +34,7 @@ Tickets are generated from a JSON file like so:
   "email": "example@uq.edu.au",
   "concert": {
     "uuid": "12345678-1234-1234-1234-123456789012",
-    "name": "Phantom of the Opera, starring Richard Thomas",
+    "name": "Phantom of the Opera",
     "date": "2023-06-07",
     "venue": "Sydney Opera House"
   }
@@ -50,7 +58,7 @@ Seating plans are generated from a JSON file like so:
 ```json
 {
   "uuid": "12345678-1234-1234-1234-123456789012",
-  "name": "Phantom of the Opera, starring Richard Thomas",
+  "name": "Phantom of the Opera",
   "date": "2023-06-07",
   "venue": "Sydney Opera House",
   "seats": {
