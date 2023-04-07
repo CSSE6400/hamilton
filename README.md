@@ -76,6 +76,20 @@ This project was created for the assessment of the subject CSSE6400 Software Arc
 It is intended to generate an output that requires work, this version accomplishes this by computing an arbitrary BCRYPT hash which is thrown away.
 The program then generates the SVGs which are of trivial computation.
 
+## Performance Characteristics
+
+These stats were made on a **t4g.micro** using:
+
+```bash
+psrecord "hamilton ....." --log activity.txt --plot performance.png
+```
+
+
+| Type                      | Stats                        |
+|---------------------------|------------------------------|
+| ticket                    | ![](performance/ticket.png)  |
+| seating                   | ![](performance/seating.png) |
+
 ## Contributing
 
 Contributions are welcome but the project is for the usage in an assessment so some aspects of the program are intentional to create load on the system.

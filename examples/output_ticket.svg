@@ -5,10 +5,10 @@
      xmlns:xlink="http://www.w3.org/1999/xlink">
 <desc>12345678-1234-1234-1234-123456789012</desc>
 <rect x="0" y="0" width="1200" height="518" style="fill:rgb(255,255,255)" />
-<rect x="0" y="0" width="200" height="518" style="fill:rgb(40,40,40)" />
-<rect x="200" y="0" width="20" height="518" style="fill:rgb(255,0,0)" />
-<circle cx="210" cy="100" r="50" style="fill:rgb(255,0,0)" />
-<text x="300" y="100" style="text-anchor:left;font-size:36px;fill:black" >Phantom of the Opera, starring Richard Thomas</text>
+<rect x="0" y="0" width="200" height="518" style="fill:rgb(92,158,173)" />
+<rect x="200" y="0" width="20" height="518" style="fill:rgb(50,98,115)" />
+<circle cx="210" cy="100" r="50" style="fill:rgb(50,98,115)" />
+<text x="300" y="100" style="text-anchor:left;font-size:36px;fill:black" >Phantom of the Opera</text>
 <text x="300" y="150" style="text-anchor:left;font-size:24px;fill:black" >2023-06-07</text>
 <text x="300" y="200" style="text-anchor:left;font-size:24px;fill:black" >Sydney Opera House</text>
 <text x="300" y="250" style="text-anchor:left;font-size:24px;fill:black" >12345678-1234-1234-1234-123456789012</text>
